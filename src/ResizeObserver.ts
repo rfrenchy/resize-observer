@@ -55,9 +55,8 @@ class ResizeObserver {
     }
 
     public destroy() {
-        this.$$observationTargets = [];
-        this.$$activeTargets = [];
-        this.$$callback = undefined;
+        this.disconnect();
+        this.$$callback = undefined as any;
         resizeObservers.splice(resizeObservers.indexOf(this), 1);
     }
 }
